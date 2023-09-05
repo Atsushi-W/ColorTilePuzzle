@@ -8176,7 +8176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9425b835e4bd955408d9cb5c05ec43f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileCount: 200
+  tileCount: 144
 --- !u!1 &313533908
 GameObject:
   m_ObjectHideFlags: 0

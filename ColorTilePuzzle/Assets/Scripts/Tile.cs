@@ -5,6 +5,7 @@ public class Tile : MonoBehaviour
 {
     public enum Tilecolor
     {
+        None = 0,
         Red,
         Green,
         Blue,
