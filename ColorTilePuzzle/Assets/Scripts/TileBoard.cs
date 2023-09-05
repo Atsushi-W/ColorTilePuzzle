@@ -14,15 +14,21 @@ public class TileBoard : MonoBehaviour
 
     private void Start()
     {
-        
+;
     }
 
     private void CreateTile()
     {
-        for (int i = 0; i < tileCount; i++)
+        Tile.Tilecolor tilecolor = Tile.Tilecolor.Red;
+        for (int i = 1; i <= tileCount; i++)
         {
+            if (i % 2 != 0)
+            {
+                tilecolor = (Tile.Tilecolor)Random.Range(0, System.Enum.GetValues(typeof(Tile.Tilecolor)).Length);
+            }
             TileCell cell = _grid.GetRandomEmptyCell();
             cell.tile.image.enabled = true;
+            cell.tile.SetColor(tilecolor);
         }
     }
 }
