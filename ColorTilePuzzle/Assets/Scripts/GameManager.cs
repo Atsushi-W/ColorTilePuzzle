@@ -4,23 +4,28 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance { get; private set; }
 
-    public float timer = 120.0f;
-    public int decreasetime = 10;
+    public Slider TimerSlider;
+    public TextMeshProUGUI ScoreText;
 
-    public Slider timerSlider;
-    public TextMeshProUGUI scoreText;
+    [SerializeField]
+    private float _timer = 120.0f;
+    [SerializeField]
+    private int _decreasetime = 10;
+    [SerializeField]
+    private int _combo = 1;
 
-    private float maxTime;
-    private bool timerFlag;
+    private float _maxTime;
+    private int _defaultcombo;
+    private bool _timerFlag;
 
     private void Awake()
     {
         // Singleton
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -30,13 +35,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        maxTime = timer;
-        timerFlag = true;
+        _maxTime = _timer;
+        _defaultcombo = _combo;
+        _timerFlag = true;
     }
 
     private void Update()
     {
-        if (timerFlag)
+        if (_timerFlag)
         {
             TimerCount();
         }
@@ -44,26 +50,33 @@ public class GameManager : MonoBehaviour
 
     public void ScoreCount()
     {
-        int score = int.Parse(scoreText.text);
-        score++;
-        scoreText.text = score.ToString();
+        int score = int.Parse(ScoreText.text);
+        score += 1 * _combo;
+        ScoreText.text = score.ToString();
+    }
+
+    public void ComboCount()
+    {
+        _combo++;
     }
 
     public void DecreaseTime()
     {
-        timer -= decreasetime;
-        timerSlider.value = timer / maxTime;
+        _timer -= _decreasetime;
+        TimerSlider.value = _timer / _maxTime;
+        // ComboReset
+        _combo = _defaultcombo;
     }
 
     private void TimerCount()
     {
-        timer -= Time.deltaTime;
+        _timer -= Time.deltaTime;
 
-        timerSlider.value = timer / maxTime;
+        TimerSlider.value = _timer / _maxTime;
 
-        if (timer <= 0)
+        if (_timer <= 0)
         {
-            timerFlag = false;
+            _timerFlag = false;
         }
     }
 }

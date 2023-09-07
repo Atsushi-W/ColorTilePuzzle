@@ -57,7 +57,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 upTile.tile.image.enabled = false;
                 upTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
             if (!downTile.empty)
@@ -65,7 +65,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 downTile.tile.image.enabled = false;
                 downTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
         }
@@ -76,7 +76,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 upTile.tile.image.enabled = false;
                 upTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
             if (!rightTile.empty)
@@ -84,7 +84,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 rightTile.tile.image.enabled = false;
                 rightTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
         }
@@ -95,7 +95,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 upTile.tile.image.enabled = false;
                 upTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
             if (!leftTile.empty)
@@ -103,7 +103,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 leftTile.tile.image.enabled = false;
                 leftTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
         }
@@ -114,7 +114,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 downTile.tile.image.enabled = false;
                 downTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
             if (!rightTile.empty)
@@ -122,7 +122,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 rightTile.tile.image.enabled = false;
                 rightTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
         }
@@ -133,7 +133,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 downTile.tile.image.enabled = false;
                 downTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
             if (!leftTile.empty)
@@ -141,7 +141,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 leftTile.tile.image.enabled = false;
                 leftTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
         }
@@ -152,7 +152,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 rightTile.tile.image.enabled = false;
                 rightTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
             if (!leftTile.empty)
@@ -160,14 +160,20 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
                 leftTile.tile.image.enabled = false;
                 leftTile.empty = true;
                 // TODO;スコアを追加
-                GameManager.instance.ScoreCount();
+                GameManager.Instance.ScoreCount();
                 tileflag = true;
             }
         }
 
         if (!tileflag)
         {
-            GameManager.instance.DecreaseTime();
+            GameManager.Instance.DecreaseTime();
+            AudioManager.Instance.PlaySE(AudioManager.SEName.Miss);
+        }
+        else
+        {
+            GameManager.Instance.ComboCount();
+            AudioManager.Instance.PlaySE(AudioManager.SEName.TileDelete);
         }
 
         clickflag = true;
