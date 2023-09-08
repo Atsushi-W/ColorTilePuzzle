@@ -3,20 +3,17 @@ using UnityEngine;
 
 public class TileGrid : MonoBehaviour
 {
-    public static TileGrid instance;
+    public static TileGrid Instance;
 
     public TileRow[] rows { get; private set; }
     public TileCell[] cells { get; private set; }
-    public Action afterSetUp;
-
-
 
     private void Awake()
     {
         // Singleton
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -36,9 +33,17 @@ public class TileGrid : MonoBehaviour
                 rows[y].cells[x].coordinates = new Vector2Int(x, y);
             }
         }
-        if (afterSetUp != null)
+    }
+
+    public void ResetTile()
+    {
+        for (int y = 0; y < rows.Length; y++)
         {
-            afterSetUp.Invoke();
+            for (int x = 0; x < rows[y].cells.Length; x++)
+            {
+                rows[y].cells[x].empty = true;
+                rows[y].cells[x].tile.image.enabled = false;
+            }
         }
     }
 

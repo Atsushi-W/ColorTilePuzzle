@@ -27,10 +27,10 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
     private void TileCheck()
     {
         // 上下左右のタイル確認
-        TileCell upTile = TileGrid.instance.UpTileCheck(cell.coordinates);
-        TileCell downTile = TileGrid.instance.DownTileCheck(cell.coordinates);
-        TileCell rightTile = TileGrid.instance.RightTileCheck(cell.coordinates);
-        TileCell leftTile = TileGrid.instance.LeftTileCheck(cell.coordinates);
+        TileCell upTile = TileGrid.Instance.UpTileCheck(cell.coordinates);
+        TileCell downTile = TileGrid.Instance.DownTileCheck(cell.coordinates);
+        TileCell rightTile = TileGrid.Instance.RightTileCheck(cell.coordinates);
+        TileCell leftTile = TileGrid.Instance.LeftTileCheck(cell.coordinates);
 
         // 各タイルの色チェック
         Tile.Tilecolor upTileColor = upTile != null ? upTile.tile.tilecolor : Tile.Tilecolor.None;
@@ -56,6 +56,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 upTile.tile.image.enabled = false;
                 upTile.empty = true;
+                upTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -64,6 +65,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 downTile.tile.image.enabled = false;
                 downTile.empty = true;
+                downTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -75,6 +77,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 upTile.tile.image.enabled = false;
                 upTile.empty = true;
+                upTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -83,6 +86,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 rightTile.tile.image.enabled = false;
                 rightTile.empty = true;
+                rightTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -94,6 +98,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 upTile.tile.image.enabled = false;
                 upTile.empty = true;
+                upTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -102,6 +107,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 leftTile.tile.image.enabled = false;
                 leftTile.empty = true;
+                leftTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -113,6 +119,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 downTile.tile.image.enabled = false;
                 downTile.empty = true;
+                downTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -121,6 +128,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 rightTile.tile.image.enabled = false;
                 rightTile.empty = true;
+                rightTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -132,6 +140,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 downTile.tile.image.enabled = false;
                 downTile.empty = true;
+                downTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -140,6 +149,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 leftTile.tile.image.enabled = false;
                 leftTile.empty = true;
+                leftTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -151,6 +161,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 rightTile.tile.image.enabled = false;
                 rightTile.empty = true;
+                rightTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;
@@ -159,6 +170,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             {
                 leftTile.tile.image.enabled = false;
                 leftTile.empty = true;
+                leftTile.tile.ParticlePlay();
                 // TODO;スコアを追加
                 GameManager.Instance.ScoreCount();
                 tileflag = true;

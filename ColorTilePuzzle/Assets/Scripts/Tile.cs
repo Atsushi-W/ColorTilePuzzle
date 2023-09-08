@@ -17,9 +17,25 @@ public class Tile : MonoBehaviour
     public Tilecolor tilecolor;
     public Image image;
 
+    private ParticleSystem[] particles;
+
     private void Awake()
     {
         image = GetComponent<Image>();
+        particles = GetComponentsInChildren<ParticleSystem>();
+    }
+
+    public void ParticlePlay()
+    {
+        if (particles == null)
+        {
+            return;
+        }
+
+        for (int i = 0; i < particles.Length; i++)
+        {
+            particles[i].Play();
+        }
     }
 
     public void SetColor(Tilecolor tilecolor)

@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public Slider TimerSlider;
     public TextMeshProUGUI ScoreText;
 
+    public GameObject GameOver;
+    public TextMeshProUGUI ResultScore;
+
     [SerializeField]
     private float _timer = 120.0f;
     [SerializeField]
@@ -37,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         _maxTime = _timer;
         _defaultcombo = _combo;
-        _timerFlag = true;
+        _timerFlag = false;
     }
 
     private void Update()
@@ -68,6 +71,14 @@ public class GameManager : MonoBehaviour
         _combo = _defaultcombo;
     }
 
+    public void GameReset()
+    {
+        _timer = _maxTime;
+        _timerFlag = true;
+        _combo = 1;
+        ScoreText.text = "0";
+    }
+
     private void TimerCount()
     {
         _timer -= Time.deltaTime;
@@ -77,6 +88,8 @@ public class GameManager : MonoBehaviour
         if (_timer <= 0)
         {
             _timerFlag = false;
+            ResultScore.text = ScoreText.text;
+            GameOver.SetActive(true);
         }
     }
 }

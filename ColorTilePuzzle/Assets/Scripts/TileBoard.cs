@@ -9,7 +9,6 @@ public class TileBoard : MonoBehaviour
     private void Awake()
     {
         _grid = GetComponentInChildren<TileGrid>();
-        _grid.afterSetUp += CreateTile;
     }
 
     private void Start()
@@ -17,7 +16,7 @@ public class TileBoard : MonoBehaviour
 ;
     }
 
-    private void CreateTile()
+    public void CreateTile()
     {
         Tile.Tilecolor tilecolor = Tile.Tilecolor.Red;
         for (int i = 1; i <= tileCount; i++)
