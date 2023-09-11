@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     {
         TileDelete,
         Miss,
+        Result,
+        Play,
     }
 
     public static AudioManager Instance { get; private set; }

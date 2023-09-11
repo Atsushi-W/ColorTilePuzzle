@@ -10,7 +10,12 @@ public class Tile : MonoBehaviour
         Green,
         Blue,
         Yellow,
-        Magenta,
+        Pink,
+        Orange,
+        Cyan,
+        Gray,
+        Brown,
+        Violet,
     }
 
     public TileCell cell { get; private set; }
@@ -18,11 +23,13 @@ public class Tile : MonoBehaviour
     public Image image;
 
     private ParticleSystem[] particles;
+    private ParticleSystemRenderer[] particleSystemRenderer;
 
     private void Awake()
     {
         image = GetComponent<Image>();
         particles = GetComponentsInChildren<ParticleSystem>();
+        particleSystemRenderer = GetComponentsInChildren<ParticleSystemRenderer>();
     }
 
     public void ParticlePlay()
@@ -34,12 +41,14 @@ public class Tile : MonoBehaviour
 
         for (int i = 0; i < particles.Length; i++)
         {
+            particleSystemRenderer[i].material.color = image.color;
             particles[i].Play();
         }
     }
 
     public void SetColor(Tilecolor tilecolor)
     {
+        Color color;
         this.tilecolor = tilecolor;
         switch(this.tilecolor)
         {
@@ -53,10 +62,30 @@ public class Tile : MonoBehaviour
                 image.color = Color.blue;
                 break;
             case Tilecolor.Yellow:
-                image.color = Color.yellow;
+                ColorUtility.TryParseHtmlString("#FFD700", out color);
+                image.color = color;
                 break;
-            case Tilecolor.Magenta:
-                image.color = Color.magenta;
+            case Tilecolor.Pink:
+                ColorUtility.TryParseHtmlString("#FF69B4", out color);
+                image.color = color;
+                break;
+            case Tilecolor.Orange:
+                ColorUtility.TryParseHtmlString("#FF8C00", out color);
+                image.color = color;
+                break;
+            case Tilecolor.Cyan:
+                image.color = Color.cyan;
+                break;
+            case Tilecolor.Gray:
+                image.color = Color.gray;
+                break;
+            case Tilecolor.Brown:
+                ColorUtility.TryParseHtmlString("#8B4513", out color);
+                image.color = color;
+                break;
+            case Tilecolor.Violet:
+                ColorUtility.TryParseHtmlString("#8A2BE2", out color);
+                image.color = color;
                 break;
             default:
                 break;
