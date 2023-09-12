@@ -29,3 +29,4 @@ Unity 2021.3.29f1
 # 使用したデザインパターン
 ・Singleton  
 ・Action
+・State
