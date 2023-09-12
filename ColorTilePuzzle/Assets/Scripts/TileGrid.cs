@@ -41,8 +41,7 @@ public class TileGrid : MonoBehaviour
         {
             for (int x = 0; x < rows[y].cells.Length; x++)
             {
-                rows[y].cells[x].empty = true;
-                rows[y].cells[x].tile.image.enabled = false;
+                rows[y].cells[x].StateReset();
             }
         }
     }

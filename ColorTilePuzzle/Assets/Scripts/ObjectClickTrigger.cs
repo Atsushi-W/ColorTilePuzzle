@@ -5,6 +5,7 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
 {
     private TileCell cell;
     private bool clickflag = true;
+    private bool tileflag = false;
 
     private void Start()
     {
@@ -48,132 +49,72 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
         // ・同じ色のタイルが2つずつある(例:赤色タイル2つと青色タイル2つ等)
 
         // 組み合わせ確認用フラグ
-        bool tileflag = false;
+        tileflag = false;
 
         if (upTileColor == downTileColor && upTileColor != Tile.Tilecolor.None)
         {
             if (!upTile.empty)
             {
-                upTile.tile.image.enabled = false;
-                upTile.empty = true;
-                upTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(upTile);
             }
             if (!downTile.empty)
             {
-                downTile.tile.image.enabled = false;
-                downTile.empty = true;
-                downTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(downTile);
             }
         }
         if (upTileColor == rightTileColor && upTileColor != Tile.Tilecolor.None)
         {
             if (!upTile.empty)
             {
-                upTile.tile.image.enabled = false;
-                upTile.empty = true;
-                upTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(upTile);
             }
             if (!rightTile.empty)
             {
-                rightTile.tile.image.enabled = false;
-                rightTile.empty = true;
-                rightTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(rightTile);
             }
         }
         if (upTileColor == leftTileColor && upTileColor != Tile.Tilecolor.None)
         {
             if (!upTile.empty)
             {
-                upTile.tile.image.enabled = false;
-                upTile.empty = true;
-                upTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(upTile);
             }
             if (!leftTile.empty)
             {
-                leftTile.tile.image.enabled = false;
-                leftTile.empty = true;
-                leftTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(leftTile);
             }
         }
         if (downTileColor == rightTileColor && downTileColor != Tile.Tilecolor.None)
         {
             if (!downTile.empty)
             {
-                downTile.tile.image.enabled = false;
-                downTile.empty = true;
-                downTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(downTile);
             }
             if (!rightTile.empty)
             {
-                rightTile.tile.image.enabled = false;
-                rightTile.empty = true;
-                rightTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(rightTile);
             }
         }
         if (downTileColor == leftTileColor && downTileColor != Tile.Tilecolor.None)
         {
             if (!downTile.empty)
             {
-                downTile.tile.image.enabled = false;
-                downTile.empty = true;
-                downTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(downTile);
             }
             if (!leftTile.empty)
             {
-                leftTile.tile.image.enabled = false;
-                leftTile.empty = true;
-                leftTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(leftTile);
             }
         }
         if (rightTileColor == leftTileColor && rightTileColor != Tile.Tilecolor.None)
         {
             if (!rightTile.empty)
             {
-                rightTile.tile.image.enabled = false;
-                rightTile.empty = true;
-                rightTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(rightTile);
             }
             if (!leftTile.empty)
             {
-                leftTile.tile.image.enabled = false;
-                leftTile.empty = true;
-                leftTile.tile.ParticlePlay();
-                // TODO;スコアを追加
-                GameManager.Instance.ScoreCount();
-                tileflag = true;
+                FlagUpdate(leftTile);
             }
         }
 
@@ -189,5 +130,11 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
         }
 
         clickflag = true;
+    }
+
+    private void FlagUpdate(TileCell cell)
+    {
+        cell.empty = true;
+        tileflag = true;
     }
 }

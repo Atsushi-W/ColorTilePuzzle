@@ -27,7 +27,6 @@ public class TileBoard : MonoBehaviour
             }
             TileCell cell = _grid.GetRandomEmptyCell();
             cell.empty = false;
-            cell.tile.image.enabled = true;
             cell.tile.SetColor(tilecolor);
         }
     }
