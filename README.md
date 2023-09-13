@@ -2,6 +2,9 @@
 <img src="./SS/title.png" width="500"></img>   
 <img src="./SS/ss.png" width="500"></img> 
 
+以下URLからプレイできます。   
+https://atsushi-w.github.io/ColorTilePuzzle/
+
 # 操作説明
 <img src="./SS/playguide.png"></img>   
 タイルの無い場所をクリックします。   
