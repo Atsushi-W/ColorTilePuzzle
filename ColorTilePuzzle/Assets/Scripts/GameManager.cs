@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     public int ComboNum()
     {
-        return _combo;
+        return _combo + 1;
     }
 
     public void ComboCount()
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     {
         _timer = _maxTime;
         _timerFlag = true;
-        _combo = 1;
+        _combo = _defaultcombo;
         _score = 0;
 
         if (OnScoreReset != null)

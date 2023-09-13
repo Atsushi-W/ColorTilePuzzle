@@ -119,17 +119,17 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
             }
         }
 
-        if (!tileflag)
-        {
-            cell.ComboMiss();
-            GameManager.Instance.DecreaseTime();
-            AudioManager.Instance.PlaySE(AudioManager.SEName.Miss);
-        }
-        else
+        if (tileflag)
         {
             cell.ComboSuccess();
             GameManager.Instance.ComboCount();
             AudioManager.Instance.PlaySE(AudioManager.SEName.TileDelete);
+        }
+        else
+        {
+            cell.ComboMiss();
+            GameManager.Instance.DecreaseTime();
+            AudioManager.Instance.PlaySE(AudioManager.SEName.Miss);
         }
 
         clickflag = true;

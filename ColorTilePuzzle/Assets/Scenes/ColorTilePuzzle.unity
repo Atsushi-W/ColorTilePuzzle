@@ -13769,7 +13769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c419caab4c5140649a450d30eed9cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seVolume: 0.5
+  _seVolume: 0.1
   _seList:
   - {fileID: 8300000, guid: b2a768b268f98a34c85c435bde7eb7a0, type: 3}
   - {fileID: 8300000, guid: 9225834a499fa7d41aa607fbdf282bfd, type: 3}
