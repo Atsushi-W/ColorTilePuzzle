@@ -40,8 +40,6 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
         Tile.Tilecolor rightTileColor = rightTile != null ? rightTile.tile.tilecolor : Tile.Tilecolor.None;
         Tile.Tilecolor leftTileColor = leftTile != null ? leftTile.tile.tilecolor : Tile.Tilecolor.None;
 
-        Debug.Log(upTileColor + ", " + downTileColor + ", " + rightTileColor + ", " + leftTileColor);
-
         // 組み合わせは以下の5つ
         // ・タイルの色の一致なし
         // ・同じ色のタイルが2つある

@@ -13641,7 +13641,7 @@ MonoBehaviour:
   _timer: 120
   TimerSlider: {fileID: 1501511208}
   _decreasetime: 10
-  _combo: 1
+  _combo: 0
   _gameOverObj: {fileID: 574927660}
   _resultScore: {fileID: 1386714598}
 --- !u!4 &1704347396
