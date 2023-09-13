@@ -66,6 +66,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int ComboNum()
+    {
+        return _combo;
+    }
+
     public void ComboCount()
     {
         _combo++;

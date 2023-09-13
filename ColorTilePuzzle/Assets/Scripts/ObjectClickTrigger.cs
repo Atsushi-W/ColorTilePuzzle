@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
 {
@@ -120,11 +121,13 @@ public class ObjectClickTrigger : MonoBehaviour, IPointerClickHandler
 
         if (!tileflag)
         {
+            cell.ComboMiss();
             GameManager.Instance.DecreaseTime();
             AudioManager.Instance.PlaySE(AudioManager.SEName.Miss);
         }
         else
         {
+            cell.ComboSuccess();
             GameManager.Instance.ComboCount();
             AudioManager.Instance.PlaySE(AudioManager.SEName.TileDelete);
         }
