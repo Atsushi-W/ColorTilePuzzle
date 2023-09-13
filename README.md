@@ -1,6 +1,6 @@
 # ColorTilePuzzle
-タイルの無い場所をクリックし、上下左右で一番近いタイルの中に同じ色の組み合わせがあればスコアが加算(タイルを消す)される。   
-組み合わせがない場合は、スコアが減算または残りタイムが減少する。
+タイルの無い場所をクリックし、上下左右で一番近いタイルの中に同じ色の組み合わせがあればスコアが加算する。   
+組み合わせがない場合は、残りタイムが減少する。
 
 # 制作環境
 Unity 2021.3.29f1
@@ -30,3 +30,12 @@ Unity 2021.3.29f1
 ・Singleton  
 ・Action  
 ・State
+
+# 使用したアセット
+・TextMeshPro  
+  
+・魔王魂  
+　https://maou.audio/  
+   
+・Effect textures and prefabs  
+　https://assetstore.unity.com/packages/vfx/particles/effect-textures-and-prefabs-109031
