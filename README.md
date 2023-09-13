@@ -1,7 +1,9 @@
 # ColorTilePuzzle
+<img src="./SS/title.png" width="500"></img>   
+<img src="./SS/ss.png" width="500"></img> 
 
 # 操作説明
-<img src="./playguide.png"></img>   
+<img src="./SS/playguide.png"></img>   
 タイルの無い場所をクリックします。   
 クリックした場所から上下左右の4方向でそれぞれ一番近いタイルの中で、   
 同じ色の組み合わせがあればスコアが加算されて、タイルが消えます。   
