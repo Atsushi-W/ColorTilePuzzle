@@ -1,6 +1,10 @@
 # ColorTilePuzzle
-<img src="./SS/title.png" width="500"></img>   
-<img src="./SS/ss.png" width="500"></img> 
+・タイトル画面   
+<img src="./SS/title.png" width="500"></img>  
+・ゲーム画面   
+<img src="./SS/ss.png" width="500"></img>  
+・リザルト画面   
+<img src="./SS/result.png" width="500"></img> 
 
 以下URLからプレイできます。   
 https://atsushi-w.github.io/ColorTilePuzzle/
